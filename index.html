@@ -9,6 +9,8 @@
     content="Ratatune listens to your harmonica and tells you exactly how in tune you are — in real time. Join early access today." />
 
   <!-- Google Fonts -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -48,6 +50,10 @@
       color: var(--text);
       font-family: var(--fb);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* ─── PERFORMANCE OPTIMIZATIONS ─────────────────────────────── */
@@ -2209,9 +2215,9 @@
   <!-- ── VIDEO BG ──────────────────────────────────────────── -->
   <div id="video-bg">
     <video id="vid-a" src="High_end_D_product_commercial.mp4" autoplay
-      muted playsinline preload="auto"></video>
+      muted playsinline preload="metadata"></video>
     <video id="vid-b" src="High_end_D_product_commercial.mp4" muted
-      playsinline preload="auto"></video>
+      playsinline preload="none"></video>
   </div>
 
   <!-- Inline play: fires immediately when video element is parsed -->
