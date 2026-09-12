@@ -60,12 +60,6 @@
       width: 100vw;
       height: 100svh;
       overflow: hidden;
-      background: url('poster.jpg') center center / cover no-repeat;
-    }
-
-    body.night-mode #video-bg video {
-      opacity: 0 !important;
-      pointer-events: none;
     }
 
     #video-bg video {
@@ -356,7 +350,7 @@
 
     /* ─── NAV ───────────────────────────────────────────────────── */
     nav {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
@@ -452,34 +446,6 @@
       box-shadow: inset 0 1px 1px rgba(255, 255, 255, .20),
         0 0 0 1px rgba(201, 151, 58, .60),
         0 0 26px rgba(201, 151, 58, .22);
-    }
-
-    /* Day / Night toggle button */
-    .btn-glass-sm {
-      font-family: var(--fb);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--gold-lt);
-      padding: 7px 14px;
-      border-radius: 100px;
-      cursor: pointer;
-      background: rgba(255, 255, 255, .03);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(201, 151, 58, .30);
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, .10);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all .2s ease;
-      user-select: none;
-    }
-
-    .btn-glass-sm:hover {
-      color: #fff;
-      background: rgba(201, 151, 58, .12);
-      border-color: rgba(201, 151, 58, .60);
-      box-shadow: 0 0 20px rgba(201, 151, 58, .25);
     }
 
     .btn-glass::before {
@@ -2224,9 +2190,9 @@
 
   <!-- ── VIDEO BG ──────────────────────────────────────────── -->
   <div id="video-bg">
-    <video id="vid-a" src="https://zxdefgavgwfxastwmmjm.supabase.co/storage/v1/object/public/assets/altus.mp4" autoplay
+    <video id="vid-a" src="High_end_D_product_commercial.mp4" autoplay
       muted playsinline preload="auto"></video>
-    <video id="vid-b" src="https://zxdefgavgwfxastwmmjm.supabase.co/storage/v1/object/public/assets/altus.mp4" muted
+    <video id="vid-b" src="High_end_D_product_commercial.mp4" muted
       playsinline preload="auto"></video>
   </div>
 
@@ -2280,13 +2246,7 @@
         <li><a href="#how-it-works" onclick="smoothScroll(event,'how-it-works')">How it works</a></li>
         <li><a href="#faq" onclick="smoothScroll(event,'faq')">FAQ</a></li>
       </ul>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <button id="day-night-btn" class="btn-glass-sm" onclick="toggleDayNight()" aria-label="Toggle Day/Night mode" title="Toggle Day/Night mode">
-          <span id="dn-icon" style="font-size: 14px; line-height: 1;">🌙</span>
-          <span id="dn-label" style="font-size: 12px; font-weight: 500; letter-spacing: 0.02em;">Night</span>
-        </button>
-        <button class="btn-glass" onclick="openModal()">Request early access</button>
-      </div>
+      <button class="btn-glass" onclick="openModal()">Request early access</button>
     </div>
   </nav>
 
@@ -3048,26 +3008,6 @@
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
-    }
-
-    /* ── Day / Night Toggle ── */
-    function toggleDayNight() {
-      const isNight = document.body.classList.toggle('night-mode');
-      const dnIcon = document.getElementById('dn-icon');
-      const dnLabel = document.getElementById('dn-label');
-      const vidA = document.getElementById('vid-a');
-      const vidB = document.getElementById('vid-b');
-
-      if (isNight) {
-        if (dnIcon) dnIcon.textContent = '☀️';
-        if (dnLabel) dnLabel.textContent = 'Day';
-        if (vidA) vidA.pause();
-        if (vidB) vidB.pause();
-      } else {
-        if (dnIcon) dnIcon.textContent = '🌙';
-        if (dnLabel) dnLabel.textContent = 'Night';
-        if (vidA) vidA.play().catch(function() {});
-      }
     }
   </script>
 
