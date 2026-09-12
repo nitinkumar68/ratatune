@@ -3010,6 +3010,15 @@
       setInterval(updateApp, 3200);
     })();
 
+    /* ── Smooth Scroll Navigation ── */
+    function smoothScroll(e, id) {
+      if (e) e.preventDefault();
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
     /* ── FAQ accordion ── */
     function toggleFaq(btn) {
       const item = btn.closest('.faq-item');
