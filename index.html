@@ -16,9 +16,7 @@
     rel="stylesheet" />
 
   <!-- Preload the background video early so it starts buffering before CSS/JS -->
-  <link rel="preload" as="video"
-    href="https://zxdefgavgwfxastwmmjm.supabase.co/storage/v1/object/public/assets/altus.mp4" type="video/mp4"
-    crossorigin />
+  <link rel="preload" as="video" href="High_end_D_product_commercial.mp4" type="video/mp4" />
 
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────── */
@@ -50,6 +48,26 @@
       color: var(--text);
       font-family: var(--fb);
       overflow-x: hidden;
+    }
+
+    /* ─── PERFORMANCE OPTIMIZATIONS ─────────────────────────────── */
+    #video-bg,
+    .phone-wrapper,
+    .stat-chip,
+    .aura-ring,
+    .btn-primary,
+    .btn-glass {
+      transform: translateZ(0);
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+
+    .extra-section,
+    .showcase-section,
+    .app-section,
+    footer {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 700px;
     }
 
     /* ─── CROSSFADE VIDEO ───────────────────────────────────────── */
@@ -2430,16 +2448,16 @@
       <div class="harp-carousel" id="harp-carousel" role="region" aria-label="Harmonica gallery">
 
         <div class="harp-slide active" data-label="Exploded Layers">
-          <img src="harp1.jpg" alt="Harmonica exploded layer view" />
+          <img src="harp1.jpg" alt="Harmonica exploded layer view" loading="lazy" decoding="async" />
         </div>
         <div class="harp-slide" data-label="Chrome Edition">
-          <img src="harp2.jpg" alt="Chrome harmonica studio" />
+          <img src="harp2.jpg" alt="Chrome harmonica studio" loading="lazy" decoding="async" />
         </div>
         <div class="harp-slide" data-label="Energy Burst">
-          <img src="harp3.jpg" alt="Harmonica energy explosion" />
+          <img src="harp3.jpg" alt="Harmonica energy explosion" loading="lazy" decoding="async" />
         </div>
         <div class="harp-slide" data-label="Studio Breakdown">
-          <img src="harp4.jpg" alt="Harmonica studio exploded" />
+          <img src="harp4.jpg" alt="Harmonica studio exploded" loading="lazy" decoding="async" />
         </div>
 
         <!-- Caption -->
