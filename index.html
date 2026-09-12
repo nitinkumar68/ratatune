@@ -2275,20 +2275,7 @@
     </div>
   </nav>
 
-  <!-- Floating stat chip -->
-  <div class="stat-chip" aria-hidden="true">
-    <div class="stat-chip-icon">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-        <path d="M3 3v18h18" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M7 14l4-4 3 3 5-6" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
-    </div>
-    <div>
-      <div class="stat-chip-num">87%</div>
-      <div class="stat-chip-lbl">Toward Target</div>
-    </div>
-  </div>
+
 
   <!-- ── PAGE ──────────────────────────────────────────────── -->
   <div id="page">
@@ -2329,7 +2316,7 @@
       <!-- CTAs -->
       <div class="cta-row">
         <button id="hero-cta" class="btn-primary" onclick="openModal()">Get early access →</button>
-        <button class="btn-ghost">See how it works ↓</button>
+        <button class="btn-ghost" onclick="smoothScroll(event,'how-it-works')">See how it works ↓</button>
       </div>
 
     </main>
